@@ -126,12 +126,12 @@ void TIMx_BRK_M1_IRQHandler(void)
   if (LL_TIM_IsActiveFlag_BRK(TIM1))
   {
     LL_TIM_ClearFlag_BRK(TIM1);
-    PWMC_OVP_Handler(&PWM_Handle_M1._Super, TIM1);
+    PWMC_DP_Handler(&PWM_Handle_M1._Super);
   }
   if (LL_TIM_IsActiveFlag_BRK2(TIM1))
   {
     LL_TIM_ClearFlag_BRK2(TIM1);
-    PWMC_DP_Handler(&PWM_Handle_M1._Super);
+    PWMC_OVP_Handler(&PWM_Handle_M1._Super, TIM1);
   }
   /* Systick is not executed due low priority so is necessary to call MC_Scheduler here.*/
   MC_Scheduler();

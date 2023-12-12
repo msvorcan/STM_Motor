@@ -33,8 +33,6 @@
 #include "regular_conversion_manager.h"
 #include "r_divider_bus_voltage_sensor.h"
 #include "virtual_bus_voltage_sensor.h"
-#include "feed_forward_ctrl.h"
-#include "flux_weakening_ctrl.h"
 #include "pqd_motor_power_measurement.h"
 
 #include "r3_1_f30x_pwm_curr_fdbk.h"
@@ -55,8 +53,6 @@ extern PID_Handle_t PIDIqHandle_M1;
 extern PID_Handle_t PIDIdHandle_M1;
 extern RegConv_t TempRegConv_M1;
 extern NTC_Handle_t TempSensor_M1;
-extern PID_Handle_t PIDFluxWeakeningHandle_M1;
-extern FW_Handle_t FW_M1;
 
 extern PWMC_R3_1_Handle_t PWM_Handle_M1;
 
@@ -70,7 +66,6 @@ extern RegConv_t VbusRegConv_M1;
 extern RDivider_Handle_t BusVoltageSensor_M1;
 extern CircleLimitation_Handle_t CircleLimitationM1;
 extern RampExtMngr_Handle_t RampExtMngrHFParamsM1;
-extern FF_Handle_t FF_M1;
 
 extern MCI_Handle_t Mci[NBR_OF_MOTORS];
 extern SpeednTorqCtrl_Handle_t *pSTC[NBR_OF_MOTORS];
@@ -78,8 +73,6 @@ extern PID_Handle_t *pPIDIq[NBR_OF_MOTORS];
 extern PID_Handle_t *pPIDId[NBR_OF_MOTORS];
 extern NTC_Handle_t *pTemperatureSensor[NBR_OF_MOTORS];
 extern PQD_MotorPowMeas_Handle_t *pMPM[NBR_OF_MOTORS];
-extern FW_Handle_t *pFW[NBR_OF_MOTORS];
-extern FF_Handle_t *pFF[NBR_OF_MOTORS];
 extern MCI_Handle_t* pMCI[NBR_OF_MOTORS];
 /* USER CODE BEGIN Additional extern */
 

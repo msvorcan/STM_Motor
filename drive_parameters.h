@@ -112,7 +112,7 @@
                                                       regulation loop (Hz) */
 
 #define PID_SPEED_KP_DEFAULT          3952/(SPEED_UNIT/10) /* Workbench compute the gain for 01Hz unit*/
-#define PID_SPEED_KI_DEFAULT          632/(SPEED_UNIT/10) /* Workbench compute the gain for 01Hz unit*/
+#define PID_SPEED_KI_DEFAULT          1271/(SPEED_UNIT/10) /* Workbench compute the gain for 01Hz unit*/
 #define PID_SPEED_KD_DEFAULT          0/(SPEED_UNIT/10) /* Workbench compute the gain for 01Hz unit*/
 /* Speed PID parameter dividers */
 #define SP_KPDIV                      64
@@ -126,7 +126,7 @@
 /* USER CODE END PID_SPEED_INTEGRAL_INIT_DIV */
 
 #define SPD_DIFFERENTIAL_TERM_ENABLING DISABLE
-#define IQMAX_A                          1
+#define IQMAX_A                          1.2
 
 /* Default settings */
 #define DEFAULT_CONTROL_MODE           MCM_SPEED_MODE
@@ -167,23 +167,23 @@
 /* Phase 1 */
 #define PHASE1_DURATION                1000 /*milliseconds */
 #define PHASE1_FINAL_SPEED_UNIT         (0*SPEED_UNIT/U_RPM)
-#define PHASE1_FINAL_CURRENT_A           1
+#define PHASE1_FINAL_CURRENT_A           1.2
 /* Phase 2 */
-#define PHASE2_DURATION                3000 /*milliseconds */
-#define PHASE2_FINAL_SPEED_UNIT         (250*SPEED_UNIT/U_RPM)
-#define PHASE2_FINAL_CURRENT_A           1
+#define PHASE2_DURATION                3333 /*milliseconds */
+#define PHASE2_FINAL_SPEED_UNIT         (3333*SPEED_UNIT/U_RPM)
+#define PHASE2_FINAL_CURRENT_A           1.2
 /* Phase 3 */
-#define PHASE3_DURATION                5000 /*milliseconds */
-#define PHASE3_FINAL_SPEED_UNIT         (2000*SPEED_UNIT/U_RPM)
-#define PHASE3_FINAL_CURRENT_A           1
+#define PHASE3_DURATION                0 /*milliseconds */
+#define PHASE3_FINAL_SPEED_UNIT         (3333*SPEED_UNIT/U_RPM)
+#define PHASE3_FINAL_CURRENT_A           1.2
 /* Phase 4 */
-#define PHASE4_DURATION                6000 /*milliseconds */
-#define PHASE4_FINAL_SPEED_UNIT         (2500*SPEED_UNIT/U_RPM)
-#define PHASE4_FINAL_CURRENT_A           1
+#define PHASE4_DURATION                0 /*milliseconds */
+#define PHASE4_FINAL_SPEED_UNIT         (3333*SPEED_UNIT/U_RPM)
+#define PHASE4_FINAL_CURRENT_A           1.2
 /* Phase 5 */
-#define PHASE5_DURATION                7000 /* milliseconds */
+#define PHASE5_DURATION                0 /* milliseconds */
 #define PHASE5_FINAL_SPEED_UNIT         (3333*SPEED_UNIT/U_RPM)
-#define PHASE5_FINAL_CURRENT_A           1
+#define PHASE5_FINAL_CURRENT_A           1.2
 
 #define ENABLE_SL_ALGO_FROM_PHASE      2
 /* Sensor-less rev-up sequence */
@@ -216,30 +216,6 @@
 #define ADC_SAMPLING_CYCLES (19 + SAMPLING_CYCLE_CORRECTION)
 
 /******************************   ADDITIONAL FEATURES   **********************/
-
-#define FW_VOLTAGE_REF                610 /*!<Vs reference, tenth
-                                                        of a percent */
-#define FW_KP_GAIN                    3000 /*!< Default Kp gain */
-#define FW_KI_GAIN                    5000 /*!< Default Ki gain */
-#define FW_KPDIV                      32768
-                                                /*!< Kp gain divisor.If FULL_MISRA_C_COMPLIANCY
-                                                is not defined the divisor is implemented through
-                                                algebrical right shifts to speed up PIs execution.
-                                                Only in this case this parameter specifies the
-                                                number of right shifts to be executed */
-#define FW_KIDIV                      32768
-                                                /*!< Ki gain divisor.If FULL_MISRA_C_COMPLIANCY
-                                                is not defined the divisor is implemented through
-                                                algebrical right shifts to speed up PIs execution.
-                                                Only in this case this parameter specifies the
-                                                number of right shifts to be executed */
-#define FW_KPDIV_LOG                  LOG2((32768))
-#define FW_KIDIV_LOG                  LOG2((32768))
-/*  Feed-forward parameters */
-#define FEED_FORWARD_CURRENT_REG_ENABLING ENABLE
-#define M1_CONSTANT1_Q                 2875
-#define M1_CONSTANT1_D                 2875
-#define M1_CONSTANT2_QD                2718
 
 /*** On the fly start-up ***/
 

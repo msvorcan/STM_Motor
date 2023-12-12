@@ -77,14 +77,14 @@ void Error_Handler(void);
 #define UART_TX_GPIO_Port GPIOA
 #define UART_RX_Pin GPIO_PIN_3
 #define UART_RX_GPIO_Port GPIOA
+#define M1_DP_Pin GPIO_PIN_6
+#define M1_DP_GPIO_Port GPIOA
 #define M1_PWM_UH_Pin GPIO_PIN_8
 #define M1_PWM_UH_GPIO_Port GPIOA
 #define M1_PWM_VH_Pin GPIO_PIN_9
 #define M1_PWM_VH_GPIO_Port GPIOA
 #define M1_PWM_WH_Pin GPIO_PIN_10
 #define M1_PWM_WH_GPIO_Port GPIOA
-#define M1_DP_Pin GPIO_PIN_11
-#define M1_DP_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
